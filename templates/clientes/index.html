@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+
+    <form action="form_cliente">
+        <input type="submit" value="Add cliente">
+    </form>
+    <ul>
+        {% for cliente in clientes  %}
+        <li><a href="detalhe_cliente/{{cliente.id}}">{{cliente.nome}}</a> | 
+            <a href="delete_cliente/{{cliente.id}}">delete</a> | 
+            <a href="update_cliente/{{cliente.id}}">update</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
