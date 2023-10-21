@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Clientes</title>
-</head>
-<body>
-    <h1>Formulário para inserir clientes</h1>
-    <form action="." method="post">
+{% extends "./base.html" %}
+
+{% block content %}
+    <div class="container">
+    <h1>Add New Client</h1>
+    <form action="." method="post" class="form-control">
         {% csrf_token %}
         {{form.as_p}}
-        <input type="submit" value="Salvar">
+        <input type="submit" value="Salvar" class="btn btn-success">
     </form>
-</body>
-</html>
+</div>   
+{% endblock %}
